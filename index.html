@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="mainApp" ng-controller="mainCont">
+    <head>
+        <title>File Browser</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="well">
+                <h1>File Browser - Version 1</h1>
+                <h3>{{currentPath}}</h3>
+            </div>
+            <div ng-repeat="(key, value) in files">
+                <div class="col-md-3">
+                    <a href="javascript:void(0)" class="item"><h3>{{key}}</h3></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Now, link JS -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/material.min.js"></script>
+        <script src="assets/js/ripples.min.js"></script>
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/dirList.js"></script>
+    </body>
+</html>
