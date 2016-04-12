@@ -9,11 +9,17 @@
         <div class="container">
             <div class="well">
                 <h1>File Browser - Version 1</h1>
-                <h3>{{currentPath}}</h3>
+                <h4>{{currentPath}}</h4>
+                <hr/>
+                <h3>Contents:</h3>
             </div>
-            <div ng-repeat="(key, value) in files">
-                <div class="col-md-3">
-                    <a href="javascript:void(0)" class="item"><h3>{{key}}</h3></a>
+        
+            <div class="well">
+                <div ng-repeat="(key, value) in files">
+                    <div>
+                        <h4 ng-if="value==='dir'"><span class="glyphicon glyphicon-folder-open"></span><a style="padding-left:15px;" href="javascript:void(0)" ng-click="changeDir(key)">{{key}}</a></h4>
+                        <h4 ng-if="value==='file'"><span class="glyphicon glyphicon-download-alt"></span><a style="padding-left:15px;" href="{{getFullFilePath(key)}}" ng-click="downloadFile(key)" download>{{key}}</a></h4>
+                    </div>
                 </div>
             </div>
         </div>
